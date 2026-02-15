@@ -68,20 +68,39 @@ Manual room scheduling led to booking conflicts and inefficiencies. This system 
 
 ## Setup
 
-1. Create a Google Apps Script project.
-2. Copy the contents of `src/Code.gs` into your project.
-3. Configure calendars:
-   - Replace IDs in `calendarMap` with your Google Calendar IDs.
-4. Set admin email:
-
-```javascript
-const ADMIN_EMAIL = "example@example.com";
-```
-5. Optional: Map therapist names to emails in therapistEmailMap.
+1. Open the **Google Sheet** that is linked to your Google Form (this Sheet stores form responses).
+2. Go to **Extensions → Apps Script** from that Sheet.
+3. In the Apps Script editor, create a new script file (e.g., `Code.gs`).
+4. Copy the contents of `src/Code.gs` into your new script file.
+5. Configure your script:
+   - Replace `calendarMap` entries with your own Google Calendar IDs.
+   - Replace or set `ADMIN_EMAIL` with your admin email address:
+     ```javascript
+     const ADMIN_EMAIL = "example@example.com";
+     ```
+   - Optional: Add name‑to‑email mappings in `therapistEmailMap` if you want different email handling.
 6. Set up triggers:
+   - **Form submit trigger → `onFormSubmit`**
+     - In the Apps Script editor, open **Triggers** (clock icon) → Add trigger → choose `onFormSubmit` → Event type: `From form submit`
+     - This ensures each form submission automatically checks availability and updates the calendar.
+   - Optional: **Time‑driven trigger → `sendDailyRoomSummaries`**
+     - Create a daily trigger (e.g., 8:00 AM) to send summary emails to staff about their scheduled rooms for the day.
 
-```
-Form submit trigger → onFormSubmit
+**Flow Overview:**  
+- Form submission → Sheet responses → Apps Script onFormSubmit → Calendar event creation → Confirmation & summary emails.
 
-Time-driven trigger → sendDailyRoomSummaries (daily at 8:00 AM)
-```
+## How to Run
+
+- **Automatic execution (recommended)**:  
+  Once the script is bound to your Google Sheet and the triggers are set:
+  1. Each form submission will automatically run `onFormSubmit`.
+  2. Daily summary emails will be sent automatically if the time-driven trigger for `sendDailyRoomSummaries` is enabled.
+
+- **Manual execution (for testing)**:  
+  1. Open the Apps Script editor from your Sheet (**Extensions → Apps Script**).  
+  2. Select the function `onFormSubmit` or `sendDailyRoomSummaries` from the dropdown.  
+  3. Click the **Run ▶** button to execute the function manually.  
+     - You may need to provide a mock `e` object for testing `onFormSubmit`.
+  4. Check your Google Calendar and email to confirm the script is working correctly.
+
+
