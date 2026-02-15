@@ -79,3 +79,13 @@ Room usage analytics
 Preference-based scheduling
 
 Database-backed tracking
+
+## Setup
+
+1. Create a Google Apps Script project.
+2. Copy the contents of `src/Code.gs` into your project.
+3. Configure calendars:
+   - Replace IDs in `calendarMap` with your Google Calendar IDs.
+4. Set admin email:
+   ```javascript
+   const ADMIN_EMAIL = "example@example.com";
