@@ -86,7 +86,7 @@ Manual room scheduling led to booking conflicts and inefficiencies. This system 
    - Optional: **Time‑driven trigger → `sendDailyRoomSummaries`**
      - Create a daily trigger (e.g., 8:00 AM) to send summary emails to staff about their scheduled rooms for the day.
 
-**Flow Overview:**  
+## Flow Overview: 
 - Form submission → Sheet responses → Apps Script onFormSubmit → Calendar event creation → Confirmation & summary emails.
 
 ## How to Run
