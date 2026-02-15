@@ -6,6 +6,10 @@ Production-deployed Google Workspace room scheduling automation built with Apps 
 
 This system was deployed in a live clinical environment to automate therapist room scheduling. It reduced manual coordination, prevented double-booking, and streamlined daily room assignment communication.
 
+## Problem
+
+Manual room scheduling led to booking conflicts and inefficiencies. This system automates the entire reservation workflow from form submission to calendar event creation and daily reporting.
+
 ## Usage
 
 1. User fills out a Google Form with room request details.
@@ -16,10 +20,6 @@ This system was deployed in a live clinical environment to automate therapist ro
 > Room Confirmed: Room A  
 > Therapist: Jane Doe  
 > Time: 9:00 AM – 10:00 AM
-
-## Problem
-
-Manual room scheduling led to booking conflicts and inefficiencies. This system automates the entire reservation workflow from form submission to calendar event creation and daily reporting.
 
 ## Tech Stack
 
