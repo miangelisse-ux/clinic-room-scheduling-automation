@@ -1,8 +1,3 @@
-// =======================================
-// Google Workspace Room Scheduling Template
-// Generalized & GitHub-Ready Version
-// =======================================
-
 // ---------- CONFIGURATION ----------
 const ADMIN_EMAIL = "admin@example.com"; // Change to your admin email
 const BUFFER_MINUTES = 10;               // Buffer time around bookings (minutes)
