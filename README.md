@@ -137,6 +137,8 @@ const ADMIN_EMAIL = "example@example.com";
 
 Optional: configure therapist email mapping for notifications.
 
+---
+
 ## 🔄 Triggers Setup
 
 ### Form Submission Trigger
