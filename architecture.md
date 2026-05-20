@@ -10,23 +10,21 @@ It enforces deterministic scheduling rules while preventing conflicts through ce
 
 ## 🏗 High-Level Architecture
 
-```
-Client Request
-     ↓
-API / Input Layer
-     ↓
-Validation Engine
-     ↓
-Scheduling Orchestrator
-     ↓
-Conflict Detection Module
-     ↓
-Resource Allocation Engine
-     ↓
-Persistence Layer
-     ↓
-Notification Layer
-```
+```mermaid
+flowchart TD
+
+A[Client Request] --> B[API / Input Layer]
+B --> C[Validation Engine]
+C --> D[Scheduling Orchestrator]
+D --> E[Conflict Detection Module]
+E --> F[Resource Allocation Engine]
+F --> G[Persistence Layer]
+G --> H[Notification System]
+
+E -->|Conflict Found| X[Reject Booking Response]
+F -->|Success| Y[Confirmed Booking]
+
+H --> Z[User Notification]
 
 ---
 
