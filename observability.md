@@ -6,6 +6,22 @@ Observability ensures visibility into workflow execution, scheduling decisions, 
 
 ---
 
+```mermaid
+flowchart TD
+
+A[System Events] --> B[Logging Layer]
+B --> C[Metrics Engine]
+B --> D[Tracing System]
+
+C --> E[Dashboards]
+D --> F[Request Flow Traces]
+
+E --> G[Alerts]
+F --> G
+```
+
+---
+
 ## 📊 Logging Layers
 
 ### 1. Request Logs
