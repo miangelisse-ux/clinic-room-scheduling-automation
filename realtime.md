@@ -8,9 +8,6 @@ Defines how scheduling updates propagate across users and maintain consistency i
 
 ## 🔄 Real-Time Flow
 
-```markdown
-## ⚡ Real-Time Synchronization Flow
-
 ```mermaid
 sequenceDiagram
 participant U as User
